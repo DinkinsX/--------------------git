@@ -15,7 +15,6 @@ sourceUrl = $('source:first')[0].src;
     if (sourceUrl) {
         downloadItem = $('<a>', {
             text: 'Скачать видео',
-            title: 'download video',
             href: sourceUrl,
             class: 'item_share'
         })
