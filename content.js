@@ -1,10 +1,15 @@
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         if( request.message === "clicked_browser_action" ) {
-            let videoId = $('.video_box_wrap:first')[0].id.replace('video_box_wrap','video');
+            try {
+                let videoId = $('.video_box_wrap:first')[0].id.replace('video_box_wrap','video');
                 console.log(videoId);
 
-            chrome.runtime.sendMessage({"message": "open_new_tab", "url": `https://m.vk.com/${videoId}`});
+                chrome.runtime.sendMessage({"message": "open_new_tab", "url": `https://m.vk.com/${videoId}`});
+            } catch (err) {
+                console.log(err);
+            }
+            
         }
     }
 );
