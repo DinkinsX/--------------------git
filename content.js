@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener(
 
 let sourceUrl, downloadItem;
 window.onload =
-sourceUrl = $('source:first')[0].src;
+    sourceUrl = $('[source], [type="video/mp4"]:first')[0].src;
     if (sourceUrl) {
         downloadItem = $('<a>', {
             text: 'Скачать видео',
